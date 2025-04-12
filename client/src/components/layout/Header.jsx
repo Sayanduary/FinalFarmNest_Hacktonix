@@ -50,24 +50,8 @@ const Header = () => {
                 Home
               </NavLink>
             </li>
-
-            <li className="nav-dropdown">
-              <span className="nav-link">Categories</span>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link to="/categories" className="dropdown-item">
-                    All Categories
-                  </Link>
-                </li>
-                {categories?.map((c) => (
-                  <li key={c._id}>
-                    <Link to={`/category/${c.slug}`} className="dropdown-item">
-                      {c.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </li>
+            
+            {/*Soil Monitoring add */}
 
             {!auth.user ? (
               <>
@@ -114,7 +98,7 @@ const Header = () => {
                 style={{ backgroundColor: "#f44336" }}
               >
                 <NavLink to="/cart" className="nav-link text-black text-xl">
-                <MdOutlineShoppingCart style={{ fontSize: "20px" }} />
+                  <MdOutlineShoppingCart style={{ fontSize: "20px" }} />
                 </NavLink>
               </Badge>
             </li>
