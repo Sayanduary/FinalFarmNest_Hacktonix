@@ -3,7 +3,7 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import SearchInput from "../Form/SearchInput";
-import useCategory from "../../hooks/useCategory";
+// import useCategory from "../../hooks/useCategory";
 import { useCart } from "../../context/Cart";
 import { Badge } from "antd";
 import logo from "../../assets/logo.png";
@@ -14,7 +14,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 const Header = () => {
   const [auth, setAuth] = useAuth();
   const [cart] = useCart();
-  const categories = useCategory();
+  // const categories = useCategory();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -45,16 +45,17 @@ const Header = () => {
         {/* Links (Right) */}
         <div className="navbar-section links-section">
           <ul className="navbar-links">
-            <li>
-              <NavLink to="/" className="nav-link">
-                Home
-              </NavLink>
-            </li>
+            
             
             {/*Soil Monitoring add */}
 
             {!auth.user ? (
               <>
+              <li>
+              <NavLink to="/SoilMonitoring" className="nav-link">
+                    Soil Monitoring
+                  </NavLink>
+              </li>
                 <li>
                   <NavLink to="/register" className="nav-link">
                     Register
