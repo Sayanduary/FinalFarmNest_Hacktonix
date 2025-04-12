@@ -25,7 +25,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="custom-navbar">
+      <nav className="custom-navbar">
       <div className="navbar-container">
         {/* Logo (Left) */}
         <div className="navbar-section logo-section">
@@ -107,6 +107,12 @@ const Header = () => {
         </div>
       </div>
     </nav>
+      </div>
+      <div>
+
+      </div>
+    </div>
+   
   );
 };
 
