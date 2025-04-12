@@ -1,126 +1,76 @@
 import React, { useState } from "react";
-import Layout from "../../components/layout/Layout";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
+import Layout from "../../components/layout/Layout";
 
-import "../../styles/AuthStyle.css";
 const SoilMonitoring = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [answer, setAnswer] = useState("");
-  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    pH: "",
+    moisture: "",
+    temperature: "",
+    nitrogen: "",
+    phosphorus: "",
+    potassium: "",
+  });
 
-  // form function
+  const [recommendations, setRecommendations] = useState([]);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/v1/auth/register`,
-        {
-          name,
-          email,
-          password,
-          phone,
-          address,
-          answer,
-        }
-      );
-      console.log(import.meta.env.VITE_API_URL);
-      if (res && res.data.success) {
-        toast.success(res.data && res.data.message);
-        navigate("/login");
-      } else {
-        toast.error(res.data.message);
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong");
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/crops/recommend`, {
+        ...formData,
+        pH: parseFloat(formData.pH),
+        moisture: parseFloat(formData.moisture),
+        temperature: parseFloat(formData.temperature),
+        nitrogen: parseFloat(formData.nitrogen),
+        phosphorus: parseFloat(formData.phosphorus),
+        potassium: parseFloat(formData.potassium),
+      });
+
+      setRecommendations(response.data.crops);
+    } catch (err) {
+      alert("Error: " + err.message);
     }
   };
 
   return (
-    <Layout title="Register - Ecommer App">
-      <div className="form-container ">
-        <form onSubmit={handleSubmit}>
-          <h4 className="title">REGISTER FORM</h4>
-          <div className="mb-3">
+    <Layout>
+        <div className="form-container">
+      <h2>Crop Recommendation Form</h2>
+      <form onSubmit={handleSubmit}>
+        {["pH", "moisture", "temperature", "nitrogen", "phosphorus", "potassium"].map((field) => (
+          <div className="form-group" key={field}>
+            <label>{field.toUpperCase()}</label>
             <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="form-control"
-              id="exampleInputEmail1"
-              placeholder="Enter Your Name"
-              required
-              autoFocus
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="form-control"
-              id="exampleInputEmail1"
-              placeholder="Enter Your Email "
+              type="number"
+              step="any"
+              name={field}
+              value={formData[field]}
+              onChange={handleChange}
               required
             />
           </div>
-          <div className="mb-3">
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Enter Your Password"
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="form-control"
-              id="exampleInputEmail1"
-              placeholder="Enter Your Phone"
-              required
-            />
-          </div>
-         
-          <div className="mb-3">
-            <input
-              type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              className="form-control"
-              id="exampleInputEmail1"
-              placeholder="Enter Your Address"
-              required
-            />
-          </div>
+        ))}
 
-          <div className="mb-3">
-            <input
-              type="text"
-              value={answer}
-              onChange={(e) => setAnswer(e.target.value)}
-              className="form-control"
-              id="exampleInputEmail1"
-              placeholder="Whats Your Birth Date?"
-              required
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            REGISTER
-          </button>
-        </form>
-      </div>
+        <button type="submit">Get Recommendations</button>
+      </form>
+
+      {recommendations.length > 0 && (
+        <div className="recommendations">
+          <h3>Recommended Crops:</h3>
+          <ul>
+            {recommendations.map((crop, index) => (
+              <li key={index}>{crop}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
     </Layout>
   );
 };

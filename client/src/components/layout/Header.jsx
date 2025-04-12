@@ -52,7 +52,7 @@ const Header = () => {
             {!auth.user ? (
               <>
               <li>
-              <NavLink to="/SoilMonitoring" className="nav-link">
+              <NavLink to="/recommend" className="nav-link">
                     Soil Monitoring
                   </NavLink>
               </li>
