@@ -3,6 +3,8 @@ import productModel from '../models/product.model.js';
 import categoryModel from '../models/category.model.js';
 import fs from "fs";
 import slugify from "slugify";
+import Product from '../models/Product.js';
+import { translateText } from '../utils/translate.js';
 
 
 
@@ -348,5 +350,32 @@ export const productCategoryController = async (req, res) => {
       message: "Error while getting product",
      
     });
+  }
+};
+
+
+
+export const getProductTranslated = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { lang } = req.query;
+
+    const product = await Product.findById(id);
+    if (!product) return res.status(404).json({ error: 'Product not found' });
+
+    // If no translation needed
+    if (!lang || lang === 'en') return res.json(product);
+
+    // Translate product fields
+    const translatedName = await translateText(product.name, lang);
+    const translatedDesc = await translateText(product.description, lang);
+
+    res.json({
+      ...product.toObject(),
+      name: translatedName,
+      description: translatedDesc,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 };
