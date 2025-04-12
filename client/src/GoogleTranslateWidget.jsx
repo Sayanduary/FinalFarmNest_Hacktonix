@@ -1,6 +1,6 @@
 // src/GoogleTranslateWidget.jsx
 import React, { useEffect } from 'react';
-
+import { NativeBuffer } from 'mongoose';
 const GoogleTranslateWidget = () => {
   useEffect(() => {
     // Load Google Translate script only when the component mounts
