@@ -24,7 +24,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.2",
     "nodemon": "^3.1.9",
-    "slugify": "^1.6.6"
+    "react": "^19.1.0",
+    "slugify": "^1.6.6",
+    "vite": "^6.2.6"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,5 @@
     "url": "https://github.com/Sayanduary/FarmNest_HackTonix/issues"
   },
   "homepage": "https://github.com/Sayanduary/FarmNest_HackTonix#readme",
-  "devDependencies": {},
   "description": ""
 }
