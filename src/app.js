@@ -3,7 +3,7 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors';
 import authRouter from './routes/authRoute.js';
 import categoryRoutes from './routes/categoryRoutes.js';
-import productRoutes from './routes/productRoute.js'
+import productRoutes from './routes/productRoutes.js'
 
 
 const app = express();
@@ -26,3 +26,11 @@ app.use("/api/v1/product", productRoutes);
 
 
 export { app };
+
+import productRoutes from './routes/productRoutes.js';
+import translatedProductRoutes from './routes/translatedProductRoutes.js';
+
+app.use('/api/products', productRoutes);
+app.use('/api/products', translatedProductRoutes);
+
+
