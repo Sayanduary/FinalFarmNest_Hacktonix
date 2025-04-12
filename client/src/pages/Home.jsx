@@ -36,7 +36,7 @@ function Home() {
   const getTotal = async () => {
     try {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/v1/product/product-Count`
+        `${import.meta.env.VITE_API_URL}/api/v1/product/product-count`
       );
       setTotal(data?.total);
     } catch (error) {
