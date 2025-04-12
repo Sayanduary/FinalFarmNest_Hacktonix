@@ -12,8 +12,8 @@ function Home() {
   const [cart, setCart] = useCart();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [checked, setCheked] = useState([]);
-  const [radio, setRadio] = useState(null); // Default set to null for no selection
+  const [checked, setChecked] = useState([]);
+  const [radio, setRadio] = useState([]); // Default set to null for no selection
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -73,18 +73,20 @@ function Home() {
     } else {
       all = all.filter((c) => c !== id);
     }
-    setCheked(all);
+    setChecked(all);
   };
 
   const filterProducts = async () => {
     try {
+      console.log("Sending filter request with:", { checked, radio });
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/v1/product/product-filter`,
         { checked, radio }
       );
+      console.log("Filter response:", data);
       setProducts(data?.products);
     } catch (error) {
-      console.log(error);
+      console.log("Filter error:", error);
     }
   };
 
@@ -108,8 +110,8 @@ function Home() {
 
   // Handle Radio button click
   const handleRadioChange = (e) => {
-    if (radio === e.target.value) {
-      setRadio(null); // Unselect if clicked again
+    if (JSON.stringify(radio) === JSON.stringify(e.target.value)) {
+      setRadio([]); // Set to empty array when unselecting
     } else {
       setRadio(e.target.value);
     }
