@@ -3,13 +3,10 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors';
 import authRouter from './routes/authRoute.js';
 import categoryRoutes from './routes/categoryRoutes.js';
-<<<<<<< HEAD
 import productRoutes from './routes/productRoute.js'
 import cropRoute from './routes/cropRoutes.js'
-=======
 import productRoutes from './routes/productRoutes.js'
 
->>>>>>> 4aaaf3064192eee702d181c64bd1431c025b9961
 
 const app = express();
 
