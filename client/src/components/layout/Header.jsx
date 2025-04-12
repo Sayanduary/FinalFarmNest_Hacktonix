@@ -9,7 +9,7 @@ import { Badge } from "antd";
 import logo from "../../assets/logo.png";
 import "../../styles/Header.css";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import GoogleTranslate from '../GoogleTanslate';
+
 
 // ...same imports
 const Header = () => {
@@ -48,7 +48,7 @@ const Header = () => {
         {/* Links (Right) */}
         <div className="navbar-section links-section">
           <ul className="navbar-links">
-            <GoogleTranslate />
+           
           <li>
               <NavLink to="/recommend" className="nav-link">
                     Soil Monitoring
