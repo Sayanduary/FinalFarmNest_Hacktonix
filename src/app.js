@@ -28,7 +28,7 @@ app.use("/api/v1/product", productRoutes);
 export { app };
 
 import productRoutes from './routes/productRoutes.js';
-import translatedProductRoutes from './routes/translatedProductRoutes.js';
+import translatedProductRoutes from './routes/translatedProductRoutes.js'; // ✅ unique name
 
 app.use('/api/products', productRoutes);
 app.use('/api/products', translatedProductRoutes);
