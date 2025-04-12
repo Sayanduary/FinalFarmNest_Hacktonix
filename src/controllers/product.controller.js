@@ -3,8 +3,8 @@ import productModel from '../models/product.model.js';
 import categoryModel from '../models/category.model.js';
 import fs from "fs";
 import slugify from "slugify";
-import Product from '../models/Product.js';
-import { translateText } from '../utils/translate.js';
+import Product from '../models/product.model.js';
+
 
 
 

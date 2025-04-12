@@ -3,16 +3,16 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors';
 import authRouter from './routes/authRoute.js';
 import categoryRoutes from './routes/categoryRoutes.js';
-import productRoutes from './routes/productRoute.js'
-import cropRoute from './routes/cropRoutes.js'
 import productRoutes from './routes/productRoutes.js'
+import cropRoute from './routes/cropRoutes.js'
+
 
 
 const app = express();
 
 
 app.use(cors({
-  origin: "http://localhost:5173",  // your frontend origin
+  origin: "http://localhost:5173/",  // your frontend origin
   credentials: true,                // allow cookies / auth headers
 }));
 
@@ -29,8 +29,7 @@ app.use('/api/v1/crops', cropRoute);
 
 export { app };
 
-import productRoutes from './routes/productRoutes.js';
-import translatedProductRoutes from './routes/translatedProductRoutes.js'; // ✅ unique name
+import translatedProductRoutes from './routes/translatedProductRoutes.js'; 
 
 app.use('/api/products', productRoutes);
 app.use('/api/products', translatedProductRoutes);
