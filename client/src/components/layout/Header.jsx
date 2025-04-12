@@ -105,7 +105,7 @@ const Header = () => {
               {/* Google Translate Widget */}
               <li className="nav-link google-translate-widget">
                 <div className="google-translate-widget-container">
-                  <GoogleTranslateWidget />
+                  <GoogleTranslateWidgets />
                 </div>
               </li>
             </ul>
