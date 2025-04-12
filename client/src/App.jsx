@@ -29,8 +29,8 @@ import Search from "./pages/Search.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
 import Categories from "./pages/Categories.jsx";
 import CategoryProduct from "./pages/CategoryProduct.jsx";
-import CartPage from './pages/CartPage.jsx'
-import SoilMonitoring from "./pages/Auth/SoilMonitoring.jsx";
+import CartPage from "./pages/CartPage.jsx";
+import SoilMonitoring from "./pages/SoilMonitoring.jsx";
 function App() {
   return (
     <>
@@ -38,12 +38,11 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/product/:slug" element={<ProductDetails />} />
         <Route path="/categories" element={<Categories />} />
-        
-        
+        <Route path="/recommend" element={<SoilMonitoring />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/search" element={<Search />}></Route>
         <Route path="/category/:slug" element={<CategoryProduct />} />
-      <Route path="/recommend" element={<SoilMonitoring />} />
+
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />
           <Route path="user/orders" element={<Orders />} />

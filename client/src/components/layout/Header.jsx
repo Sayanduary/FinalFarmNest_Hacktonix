@@ -45,17 +45,17 @@ const Header = () => {
         {/* Links (Right) */}
         <div className="navbar-section links-section">
           <ul className="navbar-links">
-            
+          <li>
+              <NavLink to="/recommend" className="nav-link">
+                    Soil Monitoring
+                  </NavLink>
+              </li>
             
             {/*Soil Monitoring add */}
 
             {!auth.user ? (
               <>
-              <li>
-              <NavLink to="/recommend" className="nav-link">
-                    Soil Monitoring
-                  </NavLink>
-              </li>
+           
                 <li>
                   <NavLink to="/register" className="nav-link">
                     Register
@@ -103,6 +103,7 @@ const Header = () => {
                 </NavLink>
               </Badge>
             </li>
+            
           </ul>
         </div>
       </div>
