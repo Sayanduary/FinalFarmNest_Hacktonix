@@ -3,19 +3,15 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import SearchInput from "../Form/SearchInput";
-// import useCategory from "../../hooks/useCategory";
 import { useCart } from "../../context/Cart";
 import { Badge } from "antd";
 import logo from "../../assets/logo.png";
 import "../../styles/Header.css";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
-
-// ...same imports
 const Header = () => {
   const [auth, setAuth] = useAuth();
   const [cart] = useCart();
-  // const categories = useCategory();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -26,11 +22,9 @@ const Header = () => {
   };
 
   return (
-    <div>
-    <div>
-<nav className="custom-navbar">
+    <nav className="custom-navbar">
       <div className="navbar-container">
-        {/* Logo (Left) */}
+        {/* Logo Section */}
         <div className="navbar-section logo-section">
           <Link to="/" className="navbar-brand">
             <span className="navbar-title">
@@ -40,27 +34,22 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Search (Center) */}
+        {/* Search Section */}
         <div className="navbar-section search-section">
           <SearchInput />
         </div>
 
-        {/* Links (Right) */}
+        {/* Links Section */}
         <div className="navbar-section links-section">
           <ul className="navbar-links">
-           
-          <li>
+            <li>
               <NavLink to="/recommend" className="nav-link">
-                    Soil Monitoring
-                  </NavLink>
-              </li>
-        
-            
-            {/*Soil Monitoring add */}
+                Soil Monitoring
+              </NavLink>
+            </li>
 
             {!auth.user ? (
               <>
-           
                 <li>
                   <NavLink to="/register" className="nav-link">
                     Register
@@ -108,17 +97,10 @@ const Header = () => {
                 </NavLink>
               </Badge>
             </li>
-            
           </ul>
         </div>
       </div>
     </nav>
-    </div>
-      <div>
-{/* <img src="https://imgs.search.brave.com/A1g3HIVyF53pk_YrZz0qOisvTPAwV07XS1GJtghqV5c/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3ZpdGUvYXNz/ZXRzL3Bob3RvLUM4/cTBLUUhHLndlYnA" alt="" /> */}
-      </div>
-      </div>
-   
   );
 };
 
