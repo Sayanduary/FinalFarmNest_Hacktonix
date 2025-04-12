@@ -9,6 +9,8 @@ import logo from "../../assets/logo.png";
 import "../../styles/Header.css";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
+
+// ...same imports
 const Header = () => {
   const [auth, setAuth] = useAuth();
   const [cart] = useCart();
@@ -22,9 +24,11 @@ const Header = () => {
   };
 
   return (
-    <nav className="custom-navbar">
+    <div>
+    <div>
+<nav className="custom-navbar">
       <div className="navbar-container">
-        {/* Logo Section */}
+        {/* Logo (Left) */}
         <div className="navbar-section logo-section">
           <Link to="/" className="navbar-brand">
             <span className="navbar-title">
@@ -34,22 +38,27 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Search Section */}
+        {/* Search (Center) */}
         <div className="navbar-section search-section">
           <SearchInput />
         </div>
 
-        {/* Links Section */}
+        {/* Links (Right) */}
         <div className="navbar-section links-section">
           <ul className="navbar-links">
-            <li>
+           
+          <li>
               <NavLink to="/recommend" className="nav-link">
-                Soil Monitoring
-              </NavLink>
-            </li>
+                    Soil Monitoring
+                  </NavLink>
+              </li>
+        
+            
+            {/*Soil Monitoring add */}
 
             {!auth.user ? (
               <>
+           
                 <li>
                   <NavLink to="/register" className="nav-link">
                     Register
@@ -97,10 +106,17 @@ const Header = () => {
                 </NavLink>
               </Badge>
             </li>
+            
           </ul>
         </div>
       </div>
     </nav>
+    </div>
+      <div>
+{/* <img src="https://imgs.search.brave.com/A1g3HIVyF53pk_YrZz0qOisvTPAwV07XS1GJtghqV5c/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3ZpdGUvYXNz/ZXRzL3Bob3RvLUM4/cTBLUUhHLndlYnA" alt="" /> */}
+      </div>
+      </div>
+   
   );
 };
 
