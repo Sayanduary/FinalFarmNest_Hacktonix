@@ -24,6 +24,7 @@ const Footer = () => {
           <p>Career</p>
           <p>Privacy Policy</p>
         </div>
+      
 
         <div className="footer-right">
           <a href="#" className="social-icon"><FaLinkedin /></a>
@@ -32,6 +33,7 @@ const Footer = () => {
           <a href="#" className="social-icon"><FaInstagram /></a>
         </div>
       </div>
+      
     </footer>
   );
 };

@@ -80,8 +80,9 @@
 .nav-link {
   text-decoration: none;
   color: white !important;
-  font-weight: 700 !important;
+  font-weight: 1700 !important;
   cursor: pointer;
+  
 }
 
 .nav-link:hover {
@@ -135,8 +136,8 @@
 
 /* Search bar */
 .search-input {
-  max-width: 400px;
-  width: 100%;
+  max-width: 300px;
+  width: 80%;
 }
 
 /* Google Translate */
