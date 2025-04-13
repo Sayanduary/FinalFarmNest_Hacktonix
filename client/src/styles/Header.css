@@ -227,3 +227,17 @@
   color: white !important;
   font-weight: 700 !important; /* Full bold */
 }
+
+.navbar-section.google-translate-widget {
+  width: 150px; /* Adjust the width as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-translate-widget select {
+  font-size: 14px; /* Adjust as necessary */
+  border: none;
+  background: transparent;
+  color: inherit;
+}
