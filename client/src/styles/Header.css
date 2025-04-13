@@ -7,27 +7,17 @@
 
 .custom-navbar {
   background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent */
-  backdrop-filter: blur(5px); /* Modern blur effect */
+  /* Modern blur effect */
   color: white;
   /* border-bottom: 1px solid #ddd; */
   padding: 10px 0;
   position: sticky;
   top: 0;
-  z-index: 999;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ background-color: rgb(26, 29, 21);
+ 
 }
 
-.bg {
-  background-image: url(../assets/header-bg.webp);
-  height: 500px;
-  background-repeat: no-repeat;
-background-size:cover;
-background-position: center;
 
-  
-  
-
-}
 
 /* Navbar layout */
 .navbar-container {
@@ -37,6 +27,8 @@ background-position: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+  
 }
 
 /* Sections */
@@ -68,12 +60,12 @@ background-position: center;
 }
 
 .navbar-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
-  color: #81c784;
+  color:rgb(225, 231, 225);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 3px;
 }
 
 /* Links */
@@ -84,6 +76,7 @@ background-position: center;
   list-style: none;
   margin: 0;
   padding: 0;
+  
 }
 
 .nav-link {

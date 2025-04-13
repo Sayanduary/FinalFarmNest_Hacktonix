@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
   
-    <div className="bg">
+    
      
       <nav className="custom-navbar">
         <div className="navbar-container">
@@ -33,7 +33,7 @@ const Header = () => {
             <Link to="/" className="navbar-brand">
               <span className="navbar-title">
                 <img className="img" src={logo} alt="Logo" />
-                Farmnest
+                FARMNEST
               </span>
             </Link>
           </div>
@@ -114,9 +114,9 @@ const Header = () => {
         </div>
 
       </nav>
-     
-    </div>
+  
   );
 };
 
 export default Header;
+  
