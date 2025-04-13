@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices";
 import { useCart } from "../context/Cart";
+import { CiShoppingCart, CiCircleInfo } from "react-icons/ci";
 
 function Home() {
   const [cart, setCart] = useCart();
@@ -191,25 +192,38 @@ function Home() {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{p.name}</h5>
-                  <p className="card-text">
-                    {p.description.substring(0, 60)}...
-                  </p>
-                  <p className="card-text fw-bold">₹{p.price}</p>
-                  <button
-                    className="btn btn-primary me-2"
-                    onClick={() => navigate(`/product/${p.slug}`)}
-                  >
-                    More Details
-                  </button>
-                  <button
-                    className="btn btn-secondary"
-                    onClick={() => {
-                      setCart([...cart, p]);
-                      toast.success("Added to Cart");
+                  <p
+                    className="card-text mb-2"
+                    style={{
+                      height: "40px", // Fixed height
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      display: "block",
+                      fontSize: "14px",
+                      lineHeight: "1.2em",
                     }}
                   >
-                    Add to Cart
-                  </button>
+                    {p.description.substring(0, 60)}...
+                  </p>
+
+                  <div>
+                    <p className="card-text fw-bold">₹{p.price}</p>
+                    <button
+                      className="btn btn-primary me-2"
+                      onClick={() => navigate(`/product/${p.slug}`)}
+                    >
+                      <CiCircleInfo size={22} />
+                    </button>
+                    <button
+                      className="btn btn-secondary"
+                      onClick={() => {
+                        setCart([...cart, p]);
+                        toast.success("Added to Cart");
+                      }}
+                    >
+                      <CiShoppingCart size={22} />
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
