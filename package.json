@@ -1,25 +1,18 @@
 {
   "name": "practice-mern-",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "homepage": "https://github.com/Sayanduary/FarmNest_HackTonix#readme",
-  "bugs": {
-    "url": "https://github.com/Sayanduary/FarmNest_HackTonix/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sayanduary/FarmNest_HackTonix.git"
-  },
-  "license": "ISC",
-  "author": "",
-  "type": "module",
   "main": "index.js",
-  "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon src/index.js",
-    "client": "npm --prefix client run dev"
-  },
+ "scripts": {
+  "start": "node src/index.js",
+  "server": "nodemon src/index.js",
+  "client": "npm --prefix client run dev",
+   "dev": "concurrently \"npm run server\" \"npm run client\""
+}
+,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
   "dependencies": {
     "antd": "^5.24.6",
     "bcryptjs": "^3.0.2",
@@ -38,5 +31,13 @@
     "slugify": "^1.6.6",
     "vite": "^6.2.6"
   },
-  "devDependencies": {}
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sayanduary/FarmNest_HackTonix.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sayanduary/FarmNest_HackTonix/issues"
+  },
+  "homepage": "https://github.com/Sayanduary/FarmNest_HackTonix#readme",
+  "description": ""
 }
