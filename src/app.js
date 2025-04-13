@@ -5,11 +5,14 @@ import authRouter from './routes/authRoute.js';
 import categoryRoutes from './routes/categoryRoutes.js';
 import productRoutes from './routes/productRoutes.js'
 import cropRoute from './routes/cropRoutes.js'
-import path from "path";
-import { fileURLToPath } from "url";
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 
 const app = express();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 app.use(cors({
@@ -36,7 +39,7 @@ app.use('/api/v1/crops', cropRoute);
 
 export { app };
 
-import translatedProductRoutes from './routes/translatedProductRoutes.js'; 
+import translatedProductRoutes from './routes/translatedProductRoutes.js';
 
 app.use('/api/products', productRoutes);
 app.use('/api/products', translatedProductRoutes);
