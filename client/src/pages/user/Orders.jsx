@@ -58,7 +58,8 @@ const Orders = () => {
 
                 {o?.products?.map((p) => (
                   <div className="card flex-row p-3 mb-3" key={p._id}>
-                    <div className="col-md-4">
+                    <
+                      div className="col-md-4">
                       <img
                         src={`${
                           import.meta.env.VITE_API_URL
