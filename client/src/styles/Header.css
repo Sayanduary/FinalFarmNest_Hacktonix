@@ -2,17 +2,34 @@
 .img {
   width: 50px;
   height: 50px;
+  filter: brightness(1.3); /* Brighten the logo */
 }
 
 .custom-navbar {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent */
+  backdrop-filter: blur(5px); /* Modern blur effect */
+  color: white;
+  /* border-bottom: 1px solid #ddd; */
   padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.bg {
+  background-image: url(../assets/header-bg.webp);
+  height: 500px;
+  background-repeat: no-repeat;
+background-size:cover;
+background-position: center;
+
+  
+  
+
+}
+
+/* Navbar layout */
 .navbar-container {
   width: 90%;
   margin: auto;
@@ -22,13 +39,12 @@
   align-items: center;
 }
 
-/* Split into 3 sections */
+/* Sections */
 .navbar-section {
   display: flex;
   align-items: center;
 }
 
-/* Section-specific width control */
 .logo-section {
   flex: 1;
 }
@@ -43,7 +59,7 @@
   justify-content: flex-end;
 }
 
-/* Brand section */
+/* Branding */
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -54,7 +70,10 @@
 .navbar-title {
   font-size: 20px;
   font-weight: bold;
-  color: #2e7d32;
+  color: #81c784;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 /* Links */
@@ -69,15 +88,16 @@
 
 .nav-link {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  color: white !important;
+  font-weight: 700 !important;
   cursor: pointer;
 }
 
 .nav-link:hover {
-  color: #2e7d32;
+  color: #f0db4f !important;
 }
 
+/* Dropdown */
 .nav-dropdown {
   position: relative;
 }
@@ -101,7 +121,7 @@
 
 .dropdown-item {
   padding: 10px 15px;
-  color: #333;
+  color: black !important;
   text-decoration: none;
   display: block;
   white-space: nowrap;
@@ -109,7 +129,7 @@
 
 .dropdown-item:hover {
   background-color: #f1f1f1;
-  color: #2e7d32;
+  color: #2e7d32 !important;
 }
 
 .dropdown-item button {
@@ -122,10 +142,41 @@
   cursor: pointer;
 }
 
-/* Search input width */
+/* Search bar */
 .search-input {
   max-width: 400px;
   width: 100%;
+}
+
+/* Google Translate */
+.navbar-section.google-translate-widget {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-translate-widget-container {
+  margin-left: 10px;
+}
+
+.google-translate-widget select {
+  font-size: 14px;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+/* Icon size */
+.navbar-links .nav-link svg {
+  font-weight: 600;
+  font-size: 22px !important;
+  color: white !important;
+}
+
+/* Spacing */
+.navbar-links > li {
+  margin-left: 10px;
 }
 
 /* Responsive */
@@ -158,86 +209,9 @@
     width: 40px;
     height: 40px;
   }
-}
 
-/* Header.css */
-.custom-navbar {
-  background-color: #3a3a3a;
-  color: white;
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Navbar top-level links - white */
-.navbar-links .nav-link {
-  color: white !important;
-}
-
-/* Cart icon (React Icon inside nav-link) - white */
-.navbar-links .nav-link svg {
-  color: white !important;
-}
-
-/* Dropdown items - black (default) */
-.dropdown-menu .dropdown-item {
-  color: black !important;
-}
-
-/* Hover color for all links (yellow) */
-.navbar-links .nav-link:hover,
-.dropdown-menu .dropdown-item:hover {
-  color: #f0db4f !important; /* yellow on hover */
-}
-
-/* Change the color of 'Farmnest' text to a brighter shade */
-.navbar-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #81c784; /* Brighter shade of green */
-}
-
-/* Brighten the logo image */
-.img {
-  width: 50px;
-  height: 50px;
-  filter: brightness(1.3); /* Increases brightness */
-}
-
-/* Navbar links - make them bold */
-.navbar-links .nav-link {
-  color: white !important;
-  font-weight: 600; /* Bolder text */
-}
-
-/* User name dropdown link - make it bold too */
-.nav-dropdown .nav-link {
-  font-weight: 600 !important;
-}
-
-/* Cart icon - bold look via increasing size & weight if needed */
-.navbar-links .nav-link svg {
-  color: white !important;
-  font-weight: 600;
-  font-size: 22px !important; /* Slightly larger for bold feel */
-}
-
-/* Force bold for all nav-link items including active ones */
-.navbar-links .nav-link,
-.navbar-links .nav-link.active {
-  color: white !important;
-  font-weight: 700 !important; /* Full bold */
-}
-
-.navbar-section.google-translate-widget {
-  width: 150px; /* Adjust the width as needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.google-translate-widget select {
-  font-size: 14px; /* Adjust as necessary */
-  border: none;
-  background: transparent;
-  color: inherit;
+  .google-translate-widget-container {
+    margin-left: 0;
+    margin-top: 5px;
+  }
 }
