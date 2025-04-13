@@ -33,7 +33,9 @@ const Footer = () => {
           <a href="#" className="social-icon"><FaInstagram /></a>
         </div>
       </div>
-      
+      <div className="copyright text-center">
+      &copy; 2025 ByteBusters. All rights reserved
+      </div>
     </footer>
   );
 };
