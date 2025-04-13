@@ -3,7 +3,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import "./Footer.css"; 
+import "./Footer.css";
 
 const Footer = () => {
   return (
@@ -24,16 +24,22 @@ const Footer = () => {
           <p>Career</p>
           <p>Privacy Policy</p>
         </div>
-      
 
         <div className="footer-right">
-          <a href="#" className="social-icon"><FaLinkedin /></a>
-          <a href="#" className="social-icon"><FaXTwitter /></a>
-          <a href="#" className="social-icon"><FaYoutube /></a>
-          <a href="#" className="social-icon"><FaInstagram /></a>
+          <a href="#" className="social-icon">
+            <FaLinkedin />
+          </a>
+          <a href="#" className="social-icon">
+            <FaXTwitter />
+          </a>
+          <a href="#" className="social-icon">
+            <FaYoutube />
+          </a>
+          <a href="#" className="social-icon">
+            <FaInstagram />
+          </a>
         </div>
       </div>
-      
     </footer>
   );
 };
