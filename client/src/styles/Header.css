@@ -6,28 +6,27 @@
 }
 
 .custom-navbar {
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent */
-  /* Modern blur effect */
+  background-color: rgba(179, 196, 148, 0.84); /* Semi-transparent */
+  backdrop-filter: blur(5px); /* Modern blur effect */
   color: white;
   /* border-bottom: 1px solid #ddd; */
   padding: 10px 0;
   position: sticky;
   top: 0;
- background-color: rgb(26, 29, 21);
- 
+  z-index: 999;
+  
 }
 
 
 
 /* Navbar layout */
 .navbar-container {
-  width: 90%;
+  width: 100%;
   margin: auto;
   padding: 0 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
   
 }
 
@@ -76,7 +75,6 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  
 }
 
 .nav-link {
